@@ -1,0 +1,55 @@
+---
+title: "Sexy Title"
+author: Victor van Pelt
+email: victor.vanpelt@whu.edu
+institute: "WHU – Otto Beisheim School of Management"
+date: today
+date-format: long
+format: 
+  beamer: 
+    latex_engine: xelatex # pdflatex creates rastered fonts
+    slide_level: 3
+classoption: "aspectratio=169"
+bibliography: "references.bib"
+biblio-style: apsr
+header-includes:
+# I am using a theme which I personally edited for WHU.
+# Be my guest to use and change it. Or use a standard theme.
+- \input{materials/beamer_theme_16x9.sty}
+- \usepackage{wrapfig}
+- \usepackage{graphicx}
+- \usepackage{subcaption}
+---
+
+## Import table
+
+```{=tex}
+
+\input{../3_output/table_1.tex}
+
+```
+
+## Summary
+
+-   We find that the type of language used in performance feedback has consequences for how people process and act on that feedback.
+-   Consistent with our predictions, assertive language increases advice following when it originates from a superior.
+-   However, inconsistent with our predictions, it also does when it originates from a subordinate.
+-   We also find that the increase in advice following due to assertive language is driven by low performers
+
+## Thank you!
+
+```{=tex}
+\begin{wrapfigure}{r}{0.37\textwidth}
+  \vspace{-0.5cm}
+  \includegraphics[width=0.41\textwidth]{"materials/profile.jpg"}
+\end{wrapfigure}
+```
+Dr. Victor van Pelt\
+Assistant Professor of Accounting\
+Finance and Accounting Group\
+WHU – Otto Beisheim School of Management
+
+Campus Vallendar, Burgplatz 2, 56179 Vallendar, Germany\
+Tel.: +49 (0)261 6509 483\
+[Victor.vanPelt\@whu.edu](mailto:Victor.vanPelt@whu.edu)\
+<https://www.victorvanpelt.com>

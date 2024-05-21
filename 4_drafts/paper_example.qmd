@@ -1,0 +1,128 @@
+---
+title: "Paper Example"
+author: 
+  - name: Victor van Pelt
+    email: Victor.vanPelt@whu.edu 
+    affiliation: WHU Otto Beisheim School of Management
+date: last-modified
+date-format: long
+execute:
+  echo: false
+  message: false
+  warning: false
+format:
+  pdf:
+    documentclass: article
+    number-sections: true
+    colorlinks: true
+    papersize: letter
+    fig-pos: H
+    fig_caption: yes
+    fig-cap-location: top
+    geometry: margin=1in
+    fontsize: 11pt
+    ident: yes
+
+editor: visual
+
+always_allow_html: yes
+
+bibliography: references.bib
+biblio-style: apsr
+
+header-includes:
+  - \usepackage{setspace}\doublespacing
+  - \setlength{\parindent}{4em}
+  - \setlength{\parskip}{0em}
+  - \setlength{\skip\footins}{2em}
+  - \usepackage[hang]{footmisc}
+  - \setlength{\footnotemargin}{1em}
+  - \usepackage{pdfpages}
+  - \usepackage{pdflscape}
+  - \usepackage{csquotes}
+  - \renewcommand{\mkbegdispquote}[2]{\itshape}
+---
+
+```{r setup, include=FALSE}
+# Right now you can use R for inline dynamic referencing to the data.
+# However, I expect them to improve this functionality: 
+
+#needed for compatibility and relative paths
+library(knitr)
+#needed to read csv
+library(haven)
+
+# Load the dataset
+data = read_dta("../2_process/auto.dta")
+
+# create variable for sample size
+sample_size = nrow(data)
+```
+
+
+<!-- Title + Abstract Page -->
+```{=tex}
+\thispagestyle{empty}
+\begin{abstract}
+\singlespace
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\end{abstract}
+```
+```{=tex}
+\vspace{0.5cm}
+\begin{center}
+\textbf{Preliminary and Incomplete}
+\end{center}
+\vspace{0.75cm}
+\begin{flushleft}
+\textbf{Keywords}: 
+\newline
+\textbf{Data Availability}:  \newline
+\textbf{Declaration of Interest}: The author(s) declare(s) that they have no conflict of interest \newline
+\end{flushleft}
+```
+
+\pagebreak
+
+\setcounter{page}{1}
+
+<!-- Main Document -->
+## Introduction  
+
+So, you can write about things, and then (dynamically from a processing file in the processing folder) report that your sample size equals 
+`r sample_size`.[^2] You can also refer to things like usual. For instance, @HLL_2000 said blabla, or perhaps in parenthetical referencing [@HLL_2000].
+
+[^2]: You can also write in footnotes.
+
+\newpage
+
+## Results
+
+We actually find stars! YEEY. See Table 1 below.
+
+\centerline{--- Insert Table 1 about here ---}
+
+Instant publication.
+
+\newpage
+
+## References {.unnumbered}
+
+\singlespacing
+
+\small
+
+::: {#refs}
+:::
+
+\newpage
+
+### Table 1: Example Table {.unnumbered}
+
+```{=tex}
+\begin{singlespace}
+\setlength{\parindent}{0em}
+\centering
+\input{../3_output/table_1.tex}
+\end{singlespace}
+```
